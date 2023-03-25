@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>https://buscandoaverroes.github.io/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://buscandoaverroes.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>plot</title>
+      <link>https://buscandoaverroes.github.io/tags/plot/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>https://buscandoaverroes.github.io/tags/r-markdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>https://buscandoaverroes.github.io/tags/regression/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sample</title>
+      <link>https://buscandoaverroes.github.io/tags/sample/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/tags/sample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>users</title>
+      <link>https://buscandoaverroes.github.io/tags/users/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/tags/users/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Advanced</title>
+      <link>https://buscandoaverroes.github.io/tags/advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/tags/advanced/</guid>
+      <description>This is the advanced tag.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on </title>
+    <link>https://buscandoaverroes.github.io/</link>
+    <description>Recent content in Home on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://buscandoaverroes.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://buscandoaverroes.github.io/about/</link>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/about/</guid>
+      <description>I have a bad habit of wandering and subsequently making something beautiful from it.</description>
+      
+    </item>
+    
+    <item>
+      <title>CV</title>
+      <link>https://buscandoaverroes.github.io/cv/</link>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/cv/</guid>
+      <description>Remember, humans are more complicated and beautiful than what you see in 1-2 pages.</description>
+      
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>https://buscandoaverroes.github.io/posts/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/posts/2020-12-01-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document.</description>
+      
+    </item>
+    
+    <item>
+      <title>Users</title>
+      <link>https://buscandoaverroes.github.io/users/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://buscandoaverroes.github.io/users/</guid>
+      <description>Real websites that are built with Blowfish.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
