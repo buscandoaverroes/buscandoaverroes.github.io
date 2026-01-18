@@ -16,7 +16,7 @@ Migrating a professional landing page from blogdown (RMarkdown-based) to Astro. 
 - Analytics/tracking integrations (can add later)
 - Blog/dynamic content
 - Comments, forms, or user interactions
-- SEO optimization beyond basics (titles, meta, sitemap)
+- SEO optimization 
 
 ## Content Structure
 

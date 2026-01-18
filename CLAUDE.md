@@ -7,6 +7,7 @@
 - **Explain changes:** Summarize what you built and why, especially if deviating from the spec. Assume user has coding knowledge; be concise.
 - **Keep it simple:** Prefer readable, straightforward code over clever solutions.
 - **Be careful about Personal Information:** Ensure only minimum personal information necessary is included.
+- **Prepare commit messages/pull request content but never commit or push code** User will review, commit, and push everything.
 
 ## Code Preferences
 
@@ -48,7 +49,7 @@
 
 ## When Done
 
-Push to `main`, GitHub Actions runs, site deploys to GitHub Pages. Provide:
+User will push to `main` and start GitHub Actions runs, site deploys to GitHub Pages. Provide:
 1. Summary of what was built (concise -- user can dive into details)
 2. Any decisions made (e.g., styling approach, component structure)
 3. Instructions for future content updates
