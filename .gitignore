@@ -1,0 +1,30 @@
+# Astro
+dist/
+.astro/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.o
+*.pyc
+__pycache__/
+
+# OS
+Thumbs.db
