@@ -1,0 +1,153 @@
+---
+import settings from '../../settings.json';
+
+// Category options: "work", "education", "teaching"
+// These map to CSS variables dynamically injected by Layout.astro
+const workHistory = settings.workHistory;
+---
+
+<section class="work-history section" id="work-history">
+  <div class="container">
+    <h2>Work & Education History</h2>
+    <div class="timeline">
+      {workHistory.map((item, index) => (
+        <article class="timeline-item">
+          <div class={`timeline-marker marker-${item.category}`}></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-role">
+                {item.role}
+                {item.current && <span class="current-badge">Current</span>}
+              </h3>
+              <div class="timeline-meta">
+                <span class="timeline-org">{item.organization}</span>
+                {item.location && (
+                  <>
+                    <span class="timeline-separator">•</span>
+                    <span class="timeline-location">{item.location}</span>
+                  </>
+                )}
+              </div>
+            </div>
+            <p class="timeline-description">{item.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .work-history {
+    background-color: var(--color-bg-alt);
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: var(--space-lg);
+  }
+
+  /* Vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: var(--space-xl);
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: calc(-1 * var(--space-lg) - 6px);
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--color-bg-alt);
+    z-index: 1;
+  }
+
+  /* Timeline marker colors by category */
+  .marker-work {
+    background-color: var(--timeline-work);
+  }
+
+  .marker-education {
+    background-color: var(--timeline-education);
+  }
+
+  .marker-teaching {
+    background-color: var(--timeline-teaching);
+  }
+
+  .timeline-content {
+    padding-left: var(--space-md);
+  }
+
+  .timeline-header {
+    margin-bottom: var(--space-sm);
+  }
+
+  .timeline-role {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .current-badge {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: var(--border-radius);
+  }
+
+  .timeline-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .timeline-separator {
+    opacity: 0.5;
+  }
+
+  .timeline-description {
+    color: var(--color-text);
+    line-height: var(--line-height-base);
+  }
+
+  @media (min-width: 768px) {
+    .timeline {
+      padding-left: var(--space-xl);
+    }
+
+    .timeline-marker {
+      left: calc(-1 * var(--space-xl) - 6px);
+    }
+
+    .timeline-content {
+      padding-left: var(--space-lg);
+    }
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import settings from '../../settings.json';
+import { getCollection } from 'astro:content';
+
+const enableMarkdownEssays = settings.features.essays;
+
+let essays = [];
+
+if (enableMarkdownEssays) {
+  // Load essays from markdown files in src/content/essays/
+  const allEssays = await getCollection('essays');
+
+  // Filter out drafts and sort by date (newest first)
+  essays = allEssays
+    .filter(essay => !essay.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .map(essay => ({
+      title: essay.data.title,
+      date: essay.data.date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }),
+      url: `/essays/${essay.slug}`
+    }));
+}
+---
+
+<section class="essays section" id="essays">
+  <div class="container">
+    <h2>Essays & Reflections</h2>
+    {essays.length === 0 ? (
+      <p class="placeholder">Coming soon: essays and reflections...</p>
+    ) : (
+      <ul class="essays-list">
+        {essays.map(essay => (
+          <li class="essay-item">
+            <a href={essay.url}>
+              <span class="essay-title">{essay.title}</span>
+              <span class="essay-date">{essay.date}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</section>
+
+<style>
+  .essays {
+    background-color: var(--color-bg-alt);
+  }
+
+  .placeholder {
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .essays-list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  .essay-item {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-md);
+  }
+
+  .essay-item:last-child {
+    border-bottom: none;
+  }
+
+  .essay-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-md);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+  }
+
+  .essay-item a:hover {
+    color: var(--color-accent);
+  }
+
+  .essay-title {
+    font-weight: 500;
+  }
+
+  .essay-date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+</style>
