@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import EssayLayout from '../../layouts/EssayLayout.astro';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('essays');
+
+  // Only generate pages for non-draft essays
+  return essays
+    .filter(essay => !essay.data.draft)
+    .map(essay => ({
+      params: { slug: essay.slug },
+      props: { essay },
+    }));
+}
+
+const { essay } = Astro.props;
+const { Content } = await essay.render();
+---
+
+<EssayLayout
+  title={essay.data.title}
+  description={essay.data.description}
+  date={essay.data.date}
+>
+  <Content />
+</EssayLayout>

@@ -1,0 +1,145 @@
+---
+import settings from '../../settings.json';
+
+const { about } = settings;
+---
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="about-header">
+      <h2>About</h2>
+      {about.enablePhotoAccents && (
+        <img src={about.photoSrc} alt={about.photoAlt} class="about-image" />
+      )}
+    </div>
+
+    <div class="about-grid">
+      <div class="about-section">
+        <h3>Languages</h3>
+        <div class="language-categories">
+          <div class="language-category">
+            <strong>Human:</strong>
+            <span>{about.humanLanguages.join(", ")}</span>
+          </div>
+          <div class="language-category">
+            <strong>Computer:</strong>
+            <span>{about.programmingLanguages.join(", ")}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h3>Interests Outside of Work</h3>
+        <p>{about.interests.join(", ")}</p>
+      </div>
+
+      <div class="about-section">
+        <h3>Recently I'm Really Into</h3>
+        <ul class="interests-list">
+          {about.currentInterests.map(interest => (
+            <li>
+              <a href={interest.url} target="_blank" rel="noopener noreferrer">
+                {interest.name}
+              </a>, {interest.description}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <h3>Some of My Favorite Libraries</h3>
+        <ul class="libraries-list">
+          {about.favoriteLibraries.map(lib => (
+            <li>
+              <a href={lib.url} target="_blank" rel="noopener noreferrer">
+                {lib.name}
+              </a>
+              {lib.language && ` - ${lib.language}`}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Photo accent header (only visible when enabled) */
+  .about-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .about-header h2 {
+    margin-bottom: 0;
+  }
+
+  .about-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-border);
+  }
+
+  .about-grid {
+    display: grid;
+    gap: var(--space-xl);
+  }
+
+  .about-section h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .language-categories {
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .language-category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .language-category strong {
+    color: var(--color-text);
+  }
+
+  .language-category span {
+    color: var(--color-text-muted);
+  }
+
+  .interests-list,
+  .libraries-list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-sm);
+  }
+
+  .interests-list li,
+  .libraries-list li {
+    padding-left: var(--space-md);
+    position: relative;
+    line-height: var(--line-height-base);
+  }
+
+  .interests-list li::before,
+  .libraries-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  @media (min-width: 768px) {
+    .language-category {
+      flex-direction: row;
+      gap: var(--space-sm);
+    }
+  }
+</style>

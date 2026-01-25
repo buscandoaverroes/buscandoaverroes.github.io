@@ -7,7 +7,7 @@ Migrating a professional landing page from blogdown (RMarkdown-based) to Astro. 
 
 ### In Scope
 - Astro project scaffold with modern tooling
-- Convert `docs/newcontent.md` into Astro pages/components
+- Convert `docs/newcontent.md` into Astro pages/components following the principles contained in `docs/design.md`
 - Static site: no CMS, no database
 - GitHub Pages deployment via GitHub Actions
 - Responsive design (mobile-friendly)

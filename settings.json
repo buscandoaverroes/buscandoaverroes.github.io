@@ -1,0 +1,154 @@
+{
+  "site": {
+    "name": "Tom Mosher",
+    "title": "Tom Mosher",
+    "language": "en"
+  },
+  "hero": {
+    "name": "Tom Mosher",
+    "subtitle": "Software Engineer, Researcher, Educator, Non-profit Leader",
+    "backgroundImage": {
+      "enabled": true,
+      "src": "/images/sakura3.jpg",
+      "opacity": 0.15,
+      "position": "center"
+    },
+    "showCTA": false,
+    "ctaText": "Learn more about my work",
+    "ctaLink": "#about"
+  },
+  "features": {
+    "essays": false,
+    "workHistory": true,
+    "about": true,
+    "links": true
+  },
+  "theme": {
+    "colorScheme": "blue"
+  },
+  "colorSchemes": {
+    "blue": {
+      "timeline-work": "#a6cee3",
+      "timeline-education": "#1f78b4",
+      "timeline-teaching": "#b2df8a"
+    },
+    "purple": {
+      "timeline-work": "#6f42c1",
+      "timeline-education": "#20c997",
+      "timeline-teaching": "#fd7e14"
+    },
+    "green": {
+      "timeline-work": "#28a745",
+      "timeline-education": "#17a2b8",
+      "timeline-teaching": "#ffc107"
+    }
+  },
+  "workHistory": [
+    {
+      "role": "R&D Engineer",
+      "organization": "IoT Company",
+      "location": "Tokyo, Japan",
+      "description": "I get to push the limits of embedded systems by exploring new transport protocols, testing energy optimization techniques, and building on-board sensor fusion AI models.",
+      "current": true,
+      "category": "work"
+    },
+    {
+      "role": "Algorithm Engineer",
+      "organization": "Software Company",
+      "location": "Tokyo, Japan",
+      "description": "I wrote core algorithms for a drone navigation company and learned a lot of nitty-gritty Go, gRPCs, and TensorFlow.",
+      "category": "work"
+    },
+    {
+      "role": "English Teacher",
+      "organization": "Japan",
+      "location": "",
+      "description": "I again worked with incredible students and teachers in beautiful, rural Japan, learned the language, and rediscovered the great outdoors.",
+      "category": "teaching"
+    },
+    {
+      "role": "Research Data Scientist",
+      "organization": "Large International Organization",
+      "location": "Washington, DC",
+      "description": "Under incredible tutelage of both Economists and Engineers I contributed to large, global studies on the questions of governance and education.",
+      "category": "work"
+    },
+    {
+      "role": "Master's Degree, Data Science",
+      "organization": "Georgetown University",
+      "location": "Washington, DC",
+      "description": "Here I fell into coding through critical inquiry of how global economic and social systems work. I discovered that if I can speak the language of computers and math at the same time, I can better dissect and contribute to claims of the empirical.",
+      "category": "education"
+    },
+    {
+      "role": "Program Coordinator",
+      "organization": "Education Non-profit",
+      "location": "USA",
+      "description": "I was granted the incredible gift each day of being reminded how talented each student is, anywhere in the world.",
+      "category": "work"
+    },
+    {
+      "role": "English Teacher",
+      "organization": "Spain",
+      "location": "",
+      "description": "I lived in two smaller cities and gained an incredible appreciation for Spanish and European cultures, and gained a critical view of my own native language while learning another.",
+      "category": "teaching"
+    },
+    {
+      "role": "Bachelor's Degree",
+      "organization": "Pomona College",
+      "location": "Los Angeles, CA, USA",
+      "description": "I majored Religious Studies: having very long, socratic conversations with complex bodies of text prepared me well for writing great code.",
+      "category": "education"
+    }
+  ],
+  "about": {
+    "enablePhotoAccents": true,
+    "photoSrc": "/images/sakura1.jpeg",
+    "photoAlt": "",
+    "humanLanguages": ["English", "Japanese", "Spanish", "Italian"],
+    "programmingLanguages": ["Go", "Rust", "Python", "R"],
+    "interests": ["Basketball", "running", "non-fiction"],
+    "currentInterests": [
+      {
+        "name": "Zenoh",
+        "url": "https://github.com/eclipse-zenoh/zenoh",
+        "description": "as maybe a paradigm shift in protocols?"
+      },
+      {
+        "name": "Borges",
+        "url": "https://en.wikipedia.org/wiki/Jorge_Luis_Borges",
+        "description": "and how his writing may or may not illuminate our collective interest in AI"
+      },
+      {
+        "name": "Zed",
+        "url": "https://github.com/zed-industries/zed",
+        "description": "and, more broadly, learning how to build Rust native apps"
+      }
+    ],
+    "favoriteLibraries": [
+      {
+        "name": "simple features",
+        "url": "https://r-spatial.github.io/sf/",
+        "language": "R"
+      },
+      {
+        "name": "plotly",
+        "url": "https://plotly.com/python/",
+        "language": "JS/R/Python..."
+      },
+      {
+        "name": "Zenoh",
+        "url": "https://github.com/eclipse-zenoh/zenoh",
+        "language": ""
+      }
+    ]
+  },
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/buscandoaverroes",
+      "description": "Code & Projects"
+    }
+  ]
+}

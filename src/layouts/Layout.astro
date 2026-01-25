@@ -1,0 +1,42 @@
+---
+import settings from '../../settings.json';
+
+interface Props {
+  title?: string;
+}
+
+const {
+  title = settings.site.title
+} = Astro.props;
+
+// Get the selected color scheme
+const selectedScheme = settings.theme.colorScheme;
+const colorScheme = settings.colorSchemes[selectedScheme];
+---
+
+<!doctype html>
+<html lang={settings.site.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <style is:inline set:html={`
+      :root {
+        --timeline-work: ${colorScheme['timeline-work']};
+        --timeline-education: ${colorScheme['timeline-education']};
+        --timeline-teaching: ${colorScheme['timeline-teaching']};
+      }
+    `}></style>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <main id="main">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
