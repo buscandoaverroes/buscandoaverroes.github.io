@@ -41,9 +41,10 @@
   --border-radius: 0.375rem;
 }
 
-/* Dark Mode */
+/* Dark Mode: applies by OS preference, or when explicitly forced via the
+   theme toggle (which sets data-theme="dark"/"light" on <html>). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-bg: #1a1a1a;
     --color-bg-alt: #222222;
     --color-text: #f5f5f5;
@@ -54,6 +55,16 @@
 
     /* Timeline colors remain same in dark mode, but you can override here if needed */
   }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #1a1a1a;
+  --color-bg-alt: #222222;
+  --color-text: #f5f5f5;
+  --color-text-muted: #a0a0a0;
+  --color-border: #333333;
+  --color-accent: #3399ff;
+  --color-accent-hover: #66b3ff;
 }
 
 /* ========================================

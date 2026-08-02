@@ -12,7 +12,7 @@ const workHistory = settings.workHistory;
     <div class="timeline">
       {workHistory.map((item, index) => (
         <article class="timeline-item">
-          <div class={`timeline-marker marker-${item.category}`}></div>
+          <div class={`timeline-marker marker-${item.category}${item.current ? ' marker-current' : ''}`}></div>
           <div class="timeline-content">
             <div class="timeline-header">
               <h3 class="timeline-role">
@@ -89,6 +89,21 @@ const workHistory = settings.workHistory;
 
   .marker-teaching {
     background-color: var(--timeline-teaching);
+  }
+
+  /* Emphasize the current role's marker */
+  .marker-current {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 30%, transparent);
+    animation: marker-pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes marker-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 30%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 0 7px color-mix(in srgb, var(--color-accent) 12%, transparent);
+    }
   }
 
   .timeline-content {
