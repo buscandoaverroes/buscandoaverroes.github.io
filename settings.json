@@ -9,7 +9,7 @@
     "subtitle": "Software Engineer, Researcher, Educator, Non-profit Leader",
     "backgroundImage": {
       "enabled": true,
-      "src": "/images/sakura3.jpg",
+      "src": "/images/sakura3.webp",
       "opacity": 0.15,
       "position": "center"
     },
@@ -18,7 +18,7 @@
     "ctaLink": "#about"
   },
   "features": {
-    "essays": false,
+    "essays": true,
     "workHistory": true,
     "about": true,
     "links": true
@@ -105,7 +105,7 @@
   "about": {
     "enablePhotoAccents": true,
     "photoSrc": "/images/sakura1.jpeg",
-    "photoAlt": "",
+    "photoAlt": "Cherry blossoms in bloom",
     "humanLanguages": ["English", "Japanese", "Spanish", "Italian"],
     "programmingLanguages": ["Go", "Rust", "Python", "R"],
     "interests": ["Basketball", "running", "non-fiction"],

@@ -31,7 +31,12 @@ A clean, minimal personal landing page built with Astro. Features dark/light mod
 │       └── global.css       # Design tokens & global styles
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml       # GitHub Actions deployment
+│       ├── deploy.yml       # GitHub Actions deployment
+│       └── secret-scan.yml  # Secret-scanning CI check
+├── docs/
+│   ├── design.md                 # Design principles
+│   ├── BLOG.md                   # How to write/publish an essay
+│   └── VISUAL_CUSTOMIZATION.md   # How to customize colors/photos
 └── astro.config.mjs         # Astro configuration
 ```
 
@@ -251,21 +256,15 @@ Edit `src/components/About.astro`:
 
 ### Essays (Markdown System)
 
-The site includes a full markdown-based essay publishing system (currently disabled).
+The site includes a full markdown-based essay publishing system, enabled via `settings.json` → `features.essays`.
 
-**To enable and use:**
-1. Set `enableMarkdownEssays = true` in `src/components/Essays.astro` (line 6)
-2. Create `.md` files in `src/content/essays/`
-3. Set `draft: false` in essay frontmatter
-4. Rebuild the site
+**To publish a post:**
+1. Create a `.md` file in `src/content/essays/` with `title`, `date`, and `draft: false` in the frontmatter
+2. Rebuild the site (`npm run build`)
 
-**Demo essay included:** `src/content/essays/demo-hello-world.md` (currently a draft)
+**Demo essay included:** `src/content/essays/demo-hello-world.md` (currently a draft, so hidden)
 
-**Full documentation:** See `ESSAYS_GUIDE.md` for complete instructions on:
-- Writing essays in Markdown
-- Managing drafts
-- Customizing essay layout
-- Adding features (tags, reading time, etc.)
+**Full documentation:** See [`docs/BLOG.md`](docs/BLOG.md) for the frontmatter schema, draft workflow, and where to customize layout/sort order.
 
 ### Links
 Edit `src/components/Links.astro`:
@@ -348,6 +347,16 @@ After initial setup, updates are automatic:
 - Confirm GitHub Pages source is set to "GitHub Actions" in repository settings
 - Check that the `site` and `base` values in `astro.config.mjs` match your repository name
 
+## Security
+
+This is a public repository, so a couple of safeguards are in place:
+
+- **Secret scanning in CI:** `.github/workflows/secret-scan.yml` runs [gitleaks](https://github.com/gitleaks/gitleaks) on every push and pull request, flagging things like API keys, tokens, or private key material before they land in history.
+- **`.gitignore`** already excludes `.env` / `.env.production`.
+- Consider also turning on GitHub's own repo-level secret scanning (**Settings → Code security**) — that's a manual toggle in the repo settings, not something a commit can set for you.
+
+If a secret is ever committed, rotating the credential is the fix — removing it from a later commit does not remove it from git history.
+
 ## Design Principles
 
 - **Simplicity**: Clean, minimal design with simple colors
@@ -374,6 +383,12 @@ After initial setup, updates are automatic:
 - ✅ Color scheme system with 3 pre-defined palettes
 - ✅ Centralized `settings.json` for all content and configuration
 - ✅ Removed "Learn more about my work" CTA button (controlled by `hero.showCTA`)
+
+### Version 0.1.1 ✅ (Completed)
+- Docs revamp: removed stale migration docs, added `docs/BLOG.md` and `docs/VISUAL_CUSTOMIZATION.md`
+- Added secret-scanning CI workflow (gitleaks)
+- Enabled the Essays (blog) system
+- Minor accessibility/performance fixes (image alt text, compressed hero image, explicit image dimensions)
 
 ### Version 0.2 (Future)
 - Internationalization (language switcher)
