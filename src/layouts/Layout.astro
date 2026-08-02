@@ -21,6 +21,15 @@ const colorScheme = settings.colorSchemes[selectedScheme];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <script is:inline>
+      // Apply any saved theme override before first paint, to avoid a flash of the wrong theme.
+      (function () {
+        var stored = localStorage.getItem('theme');
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      })();
+    </script>
     <style is:inline set:html={`
       :root {
         --timeline-work: ${colorScheme['timeline-work']};
@@ -31,12 +40,68 @@ const colorScheme = settings.colorSchemes[selectedScheme];
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
+      <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+    </button>
     <main id="main">
       <slot />
     </main>
+    <script is:inline>
+      (function () {
+        var button = document.getElementById('theme-toggle');
+        var icon = button.querySelector('.theme-toggle-icon');
+        var mql = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function currentTheme() {
+          var explicit = document.documentElement.getAttribute('data-theme');
+          return explicit || (mql.matches ? 'dark' : 'light');
+        }
+
+        function updateButton() {
+          var isDark = currentTheme() === 'dark';
+          icon.textContent = isDark ? '☀️' : '🌙';
+          button.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+        }
+
+        button.addEventListener('click', function () {
+          var next = currentTheme() === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateButton();
+        });
+
+        updateButton();
+      })();
+    </script>
   </body>
 </html>
 
 <style is:global>
   @import '../styles/global.css';
+</style>
+
+<style>
+  .theme-toggle {
+    position: fixed;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    z-index: 50;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background-color: var(--color-bg);
+    cursor: pointer;
+    font-size: 1.125rem;
+    line-height: 1;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
+  }
 </style>
